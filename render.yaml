@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: activity-feed-backend
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: MONGODB_URI
+        scope: all
+        value: mongodb+srv://username:password@cluster.mongodb.net/activity-feed?retryWrites=true&w=majority
+      - key: NODE_ENV
+        scope: all
+        value: production
+      - key: PORT
+        scope: all
+        value: 5000
+    autoDeploy: true
+    branch: main
+    rootDir: ./
