@@ -1,0 +1,150 @@
+:root {
+  --primary-color: #1f2937;
+  --secondary-color: #4f46e5;
+  --background: #ffffff;
+  --border-color: #e5e7eb;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+}
+
+.activity-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: all 0.2s;
+  opacity: 1;
+}
+
+.activity-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--secondary-color);
+}
+
+.activity-item.optimistic {
+  opacity: 0.7;
+  background: #fffbeb;
+  border-color: var(--warning-color);
+}
+
+.activity-icon {
+  font-size: 28px;
+  min-width: 40px;
+  line-height: 40px;
+}
+
+.activity-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.actor-name {
+  color: var(--primary-color);
+  font-size: 15px;
+}
+
+.activity-type {
+  display: inline-block;
+  background: #e5e7eb;
+  color: var(--text-primary);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.activity-description {
+  color: var(--text-primary);
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.activity-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  flex-wrap: wrap;
+}
+
+.timestamp {
+  color: var(--text-secondary);
+}
+
+.entity-id {
+  color: var(--text-tertiary);
+}
+
+.optimistic-badge {
+  display: inline-block;
+  background: var(--warning-color);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 600px) {
+  .activity-item {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .activity-icon {
+    font-size: 24px;
+    min-width: 32px;
+    line-height: 32px;
+  }
+
+  .activity-header {
+    gap: 6px;
+  }
+
+  .actor-name {
+    font-size: 14px;
+  }
+
+  .activity-type {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+
+  .activity-description {
+    font-size: 13px;
+  }
+
+  .activity-meta {
+    gap: 8px;
+    font-size: 11px;
+  }
+}
